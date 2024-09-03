@@ -112,10 +112,3 @@ Feel free to reach out if you have any questions or suggestions!
 
 Made with ❤️ by [Pritam Awatade](https://github.com/pritamawatade)
 ```
-
-### Notes:
-
-- This `README.md` is designed to be visually appealing with images and emojis to enhance readability and engagement.
-- Replace the image URLs with your actual project images if you have them.
-- Ensure all links (like `GitHub`, `LinkedIn`, `LICENSE`) are correctly pointed to your relevant profiles and files.
-- Once you're ready, add this `README.md` to your GitHub repository to make it look professional and inviting to contributors.
