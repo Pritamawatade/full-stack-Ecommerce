@@ -6,16 +6,14 @@ try {
 } catch (\Throwable $th) {
     throw $th;
 }
-include '../includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-  
     if ($email == 'pritamawatde5@gmail.com' && $password == 'admin8587') {
         session_start();
-      
+
         $_SESSION['isadmin'] = 1;
 
         header('Location: ../admin/admin.php');
@@ -25,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
@@ -42,13 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 header("Location: ../index.php");
             }
         } else {
-            echo '<div class="alert alert-danger alert-dismissible fade show absolute" role="alert">
+            echo '<div class="alert top-36 alert-danger alert-dismissible fade show absolute" role="alert">
             <strong>Hey! </strong> You have entered the wrong password
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
         }
     } else {
-        echo "User not found!";
+        echo '<div class="alert alert-danger alert-dismissible fade show absolute top-36" role="alert">
+        <strong>Hey! </strong> User not found!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
     }
 }
 
@@ -56,11 +57,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
+<head>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <?php 
+include '../includes/header.php';
 
+?>
+</head>
 
 <section class="bg-orange-50 dark:bg-green-700">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">

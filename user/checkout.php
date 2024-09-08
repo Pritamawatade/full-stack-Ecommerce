@@ -49,7 +49,7 @@ $user = $result->fetch_assoc();
                 <ul class="mb-4">
                     <?php foreach ($_SESSION['cart'] as $product): ?>
                         <li class="mb-2">
-                            <?php echo $product['name']; ?> - <?php echo $product['quantity']; ?> x $<?php echo number_format($product['price'], 2); ?>
+                            <?php echo $product['name']; ?> - <?php echo $product['quantity']; ?> x &#x20B9;<?php echo number_format($product['price'], 2); ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>

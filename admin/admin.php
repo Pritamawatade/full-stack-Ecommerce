@@ -98,12 +98,7 @@ if ($_SESSION['isadmin'] != 1) {
                         Add New Product
                     </li>
 
-                    <li class="p-4 hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:translate-x-2">
-                        <p class="flex items-center space-x-2" onclick="showSection('deleteProduct')">
-                            <i class="fa-regular fa-trash-can"></i>
-                            Delete products
-                        </p>
-                    </li>
+                   
 
                     <!-- Add this snippet to the menu bar section in your admin panel -->
                     <li class="p-4 hover:bg-green-800 cursor-pointer transition duration-300 ease-in-out transform hover:translate-x-2">
@@ -217,7 +212,7 @@ if ($_SESSION['isadmin'] != 1) {
                                     echo '<td class="px-6 py-4 border-b border-gray-200">' . $row['name'] . '</td>';
                                     echo '<td class="px-6 py-4 border-b border-gray-200">' . substr($row['description'], 0, 50) . '...</td>';
                                     echo '<td class="px-6 py-4 border-b border-gray-200">' . $row['category_id'] . '</td>';
-                                    echo '<td class="px-6 py-4 border-b border-gray-200">$' . number_format($row['price'], 2) . '</td>';
+                                    echo '<td class="px-6 py-4 border-b border-gray-200">₹' . number_format($row['price'], 2) . '</td>';
                                     echo '<td class="px-6 py-4 border-b border-gray-200"><img src="' . $row['image'] . '" alt="' . $row['name'] . '" class="h-20 w-20 object-cover rounded-md shadow-md transition duration-500 ease-in-out transform hover:scale-110"></td>';
                                     echo '<td class="px-6 py-4 border-b border-gray-200">' . $row['stock_quantity'] . '</td>';
                                     echo '<td class="px-6 py-4 border-b border-gray-200">' . $row['created_at'] . '</td>';

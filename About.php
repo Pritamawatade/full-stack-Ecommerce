@@ -249,11 +249,21 @@ include './includes/header.php';
 
 
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const delimg = document.getElementById('delimg');
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        delimg.classList.add('clicked');
+                        observer.unobserve(delimg); // Stop observing after the animation is triggered
+                    }
+                });
+            }, {
+                threshold: 0.5 // Adjust this value as needed
+            });
 
-        const delimg = document.getElementById('delimg');
-        delimg.addEventListener('click', () => {
-            delimg.classList.toggle('clicked'); // Toggle the 'clicked' class
+            observer.observe(delimg);
         });
 
 

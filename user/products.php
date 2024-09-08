@@ -7,7 +7,7 @@ $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-orange-100">
 
 <head>
     <meta charset="UTF-8">
@@ -16,10 +16,10 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css">
 </head>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden;" >
 <div class="container min-w-96 mx-auto mt-10 flex items-center justify-center">
     <!-- Search Bar -->
-    <div class="mb-8 w-full max-w-md relative">
+    <div class="mb-8 w-full max-w-md relative mt-20">
         <input
             type="text"
             id="search-input"

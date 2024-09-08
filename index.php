@@ -4,13 +4,13 @@ $sql = "SELECT * FROM Products where price < 199 Limit 4";
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden min-h-screen w-screen">
 
 <head>
   <title>Document</title>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
   <title>Farmkart-home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -165,19 +165,19 @@ $result = $conn->query($sql);
   </style>
 </head>
 
-<body class="overflow-x-hidden min-h-screen">
+<body class="overflow-x-hidden min-h-screen w-screen">
   <div class="container">
 
     <div class="main">
       <div class="header sm:sm:flex justify-around items-center">
-        <img class="w-screen p-0 m-0 " src="./assets/bg.jpg" alt="" />
+        <img class="w-screen p-0 m-0 img-fluid " src="./assets/header_upscayl_2x_realesrgan-x4plus.png"alt="" />
       </div>
 
       <div class="hero sm:absolute sm:flex relative">
         <div class="text">
-          <h1 class="sm:text-7xl sm:mt-1 text-slate-50 font-bold anton-regular">
-            HELPING INDIAN FARMER<br /><span class="text-green-600 bg-sky-400 rounded-xl anton-regular">FARMER</span>
-            IN EVERY WAY <br> POSIBLE
+          <h1 class="sm:text-7xl sm:mt-1 text-green-600 uppercase font-bold anton-regular">
+            On a mission to plant<br /><span class="text-orange-500 bg-sky-400 rounded-xl anton-regular">1000000 +</span>
+            seeds <br> Every year
           </h1>
         </div>
         <div
@@ -193,7 +193,7 @@ $result = $conn->query($sql);
     </div>
 
     <div class="leaf">
-      <img class="h-32 w-32" src="./assets/wheat.png" alt="" />
+      <img class="h-32 w-32 img-fluid" src="./assets/wheat.png" alt="" />
     </div>
 
     <div class="sm:sm:flex justify-around h-screen">
@@ -222,12 +222,12 @@ $result = $conn->query($sql);
       <div
         class="heroimg sm:flex-1 relative items-center justify-center p-4 bg-green-100">
         <img
-          class="img-1 h-full sm:w-full object-cover"
+          class="img-1 h-full img-fluid sm:w-full object-cover"
           src="https://ecoassure.onlywebcoding.com.ua/images/aboutus.png"
           alt="" />
       </div>
     </div>
-    <div class="sm:sm:flex justify- m-0 h-screen heroimg2">
+    <div class="sm:flex  m-0 h-screen heroimg2 img-fluid">
 
       <div
         class="heor2text absolute sm:flex items- justify-around max-w-6xl p-4 bg-transparent">
@@ -247,41 +247,41 @@ $result = $conn->query($sql);
           <div
             class="transform transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-500 shadow-lg rounded-lg overflow-hidden">
             <img
-              class="pr-4 sm:w-full h-48 m-4 object-cover"
+              class="pr-4 img-fluid sm:w-full h-48 m-4 object-cover"
               src="https://img.freepik.com/free-photo/so-many-vegetables-this-field_181624-18619.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
               alt="Sample Image" />
             <div class="p-4">
-              <h2 class="sm:text-xl font-bold mb-2 text-yellow-600">
-                Aggriculuture product
+              <h2 class="sm:text-xl font-bold mb-2 text-yellow-200 font-playfair">
+                Organic product
               </h2>
               <p class="text-white">
-                Elvate your life by buying the farmkart products
+              So that everything is nature free
               </p>
             </div>
           </div>
           <div
             class="transform transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-100 shadow-lg rounded-lg overflow-hidden">
             <img
-              class="pr-4 sm:w-full sm:h-48 m-4 object-cover"
+              class="pr-4 img-fluid sm:w-full sm:h-48 m-4 object-cover"
               src="https://img.freepik.com/free-photo/smart-agriculture-iot-with-hand-planting-tree-background_53876-124626.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
               alt="Sample Image" />
             <div class="p-4">
-              <h2 class="sm:text-xl font-bold mb-2 text-yellow-600">
-                Aggriculuture product
+              <h2 class="sm:text-xl font-bold mb-2 text-yellow-200 font-playfair">
+                Everything is with scienece
               </h2>
               <p class="text-white">
-                Elvate your life by buying the farmkart products
+              Being able to see the smile on our indian farmer
               </p>
             </div>
           </div>
           <div
             class="transform transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-black-50 shadow-lg rounded-lg overflow-hidden">
             <img
-              class="pr-4 sm:w-full h-48 m-4 object-cover"
+              class="pr-4 img-fluid sm:w-full h-48 m-4 object-cover"
               src="https://img.freepik.com/free-photo/close-up-male-hands-holding-soil-little-plant_23-2148814127.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
               alt="Sample Image" />
             <div class="p-4">
-              <h2 class="sm:text-xl font-bold mb-2 text-yellow-600">
+              <h2 class="sm:text-xl font-bold mb-2 text-yellow-200 font-playfair">
                 Aggriculuture product
               </h2>
               <p class="text-white">
@@ -296,7 +296,7 @@ $result = $conn->query($sql);
               src="https://img.freepik.com/premium-photo/morning-sprouts-green-wheat-exploring-agriculture-ecology-gardening-practices_209190-235737.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
               alt="Sample Image" />
             <div class="p-4">
-              <h2 class="sm:text-xl font-bold mb-2 text-yellow-600">
+              <h2 class="sm:text-xl font-bold mb-2 text-yellow-200 font-playfair">
                 Aggriculuture product
               </h2>
               <p class="text-white">

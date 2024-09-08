@@ -1,15 +1,12 @@
 <?php
     include './config.php';
     use PHPMailer\PHPMailer\PHPMailer;
-    
-    use PHPMailer\PHPMailer\Exception;
 try {
     require '/xampp/htdocs/E-commerce/config/db.php';
 } catch (\Throwable $th) {
     throw $th;
 }
- 
-include '../includes/header.php';
+
 
 
 
@@ -62,47 +59,57 @@ if ($result->num_rows == 0) {
     $stmt->bind_param("sssss", $name, $email, $password, $phone, $address);
     $stmt->execute();
     header("Location: login.php");
+     
+include '../includes/header.php';
 } else {
-    echo "Email is already registered! please log in";
+    echo '<script>alert("Email is already registered! please log in")</script>';
+ 
 }
 }
 
 
 ?>
-<body class="bg-sky-800">
+<!DOCTYPE html>
+<html lang="en" class="bg-orange-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp-FARMKART</title>
+</head>
+<body class="">
     
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <div class="max-w-4xl mx-auto font-[sans-serif] p-6 ">
+    <div class="max-w-4xl mx-auto font-[sans-serif] p-6 mt-36">
         <div class="text-center mb-16">
             <a href="javascript:void(0)"><img
             src="https://farmkartgroup.com/wp-content/uploads/2020/07/Farmkart-Logo.svg" alt="logo" class='w-52 inline-block' />
         </a>
-        <h4 class="text-red-50 text-base font-semibold mt-6">Sign up into your account</h4>
+        <h4 class="text-black-50 text-base font-semibold mt-6">Sign up into your account</h4>
     </div>
     
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <div class="grid sm:grid-cols-2 gap-8">
             <div>
-                <label class="text-red-50 text-sm mb-2 block">First Name</label>
-                <input name="name" type="text" class="bg-gray-100 w-full text-red-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent outline-blue-500 transition-all" placeholder="Enter name" />
+                <label class="text-black-50 text-sm mb-2 block">First Name</label>
+                <input name="name" type="text" class="bg-gray-100 w-full text-black-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent outline-blue-500 transition-all" placeholder="Enter name" />
             </div>
             
             <div>
-                <label class="text-red-50 text-sm mb-2 block">Email Id</label>
-                <input name="email" type="email" class="bg-gray-100 w-full text-red-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent outline-blue-500 transition-all" placeholder="Enter email" />
+                <label class="text-black-50 text-sm mb-2 block">Email Id</label>
+                <input name="email" type="email" class="bg-gray-100 w-full text-black-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent outline-blue-500 transition-all" placeholder="Enter email" />
             </div>
             <div>
-                <label class="text-red-50 text-sm mb-2 block">Mobile No.</label>
-                <input name="phone" type="number" class="bg-gray-100 w-full text-red-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent  outline-blue-500 transition-all" placeholder="Enter mobile number" />
+                <label class="text-black-50 text-sm mb-2 block">Mobile No.</label>
+                <input name="phone" type="number" class="bg-gray-100 w-full text-black-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent  outline-blue-500 transition-all" placeholder="Enter mobile number" />
             </div>
             <div>
-                <label class="text-red-50 text-sm mb-2 block">Password</label>
-                <input name="password" type="password" class="bg-gray-100 w-full text-red-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent outline-blue-500 transition-all" placeholder="Enter password" />
+                <label class="text-black-50 text-sm mb-2 block">Password</label>
+                <input name="password" type="password" class="bg-gray-100 w-full text-black-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent outline-blue-500 transition-all" placeholder="Enter password" />
             </div>
             <div>
-                <label class="text-red-50 text-sm mb-2 block">Address</label>
-                <input name="address" type="text" class=" outline-blue-500 bg-gray-100 w-full text-red-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent  transition-all" placeholder="Enter Address" />
+                <label class="text-black-50 text-sm mb-2 block">Address</label>
+                <input name="address" type="text" class=" outline-blue-500 bg-gray-100 w-full text-black-50 text-sm px-4 py-3.5 rounded-md focus:bg-transparent bg-transparent  transition-all" placeholder="Enter Address" />
             </div>
             
         </div>
@@ -112,9 +119,10 @@ if ($result->num_rows == 0) {
                 Sign up
             </button>
         </div>
-        <p class="text-sm font-light text-red-500 dark:text-red-50">
+        <p class="text-sm font-light text-black-500 dark:text-black-50">
             Already have an account ?        <a href="login.php" class="font-medium text-blue-600 hover:underline dark:text-primary-500">Log in</a>
         </p>
     </form>
 </div>
 </body>
+</html>

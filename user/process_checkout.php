@@ -15,25 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check if the image was uploaded
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-        // $imageTmpPath = $_FILES['image']['tmp_name'];
 
-        // // Ensure the image file is not corrupted and is valid
-        // $imgContent = file_get_contents($imageTmpPath);
-        
-        // if ($imgContent === false) {
-        //     echo "Error reading image content.";
-        //     exit();
-        // }
-
-        // // Prepare the binary data for insertion into the database
-        // $imgContent = mysqli_real_escape_string($conn, $imgContent);
 
 
         $imageTmpPath = $_FILES['image']['tmp_name'];
-  
 
-    // Read the image file as binary data
-  
+
+        // Read the image file as binary data
+
         // Insert order into orders table with image
         $sql = "INSERT INTO orders (user_id, shipping_address, total_amount,  created_at) VALUES (?, ?, ?,  NOW())";
         $stmt = $conn->prepare($sql);
@@ -47,23 +36,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-  
+
         // Insert image data into database
         $sql = "UPDATE  orders SET image = '$imgContent' WHERE id = $order_id";
         if (mysqli_query($conn, $sql)) {
             echo "Payment screenshot uploaded successfully";
         } else {
-            echo "Error: ". $sql. "<br>". mysqli_error($conn);
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-  
 
+        $stock_quantity;
         // Insert order items into order_items table
         foreach ($_SESSION['cart'] as $product) {
+            $sql1 = "UPDATE products SET stock_quantity = stock_quantity - ? WHERE id = ?";
+            $stmt = $conn->prepare($sql1);
+            $stmt->bind_param('ii', $product['quantity'], $product['id']);
+            $stmt->execute();
             $sql = "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('iiid', $order_id, $product['id'], $product['quantity'], $product['price']);
             $stmt->execute();
         }
+
+        $sql = "UPDATE products SET stock_quantity = 123 WHERE id = 7";
         unset($_SESSION['cart']);
 
         // Redirect to the order confirmation page
@@ -77,4 +72,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: checkout.php');
     exit();
 }
-?>
