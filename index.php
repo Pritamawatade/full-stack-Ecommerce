@@ -19,7 +19,9 @@ $result = $conn->query($sql);
     href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -170,12 +172,12 @@ $result = $conn->query($sql);
 
     <div class="main">
       <div class="header sm:sm:flex justify-around items-center">
-        <img class="w-screen p-0 m-0 img-fluid " src="./assets/header_upscayl_2x_realesrgan-x4plus.png"alt="" />
+        <img class="w-screen p-0 m-0 img-fluid " src="./assets/DeWatermark.ai_1725966759153.png" alt="" />
       </div>
 
       <div class="hero sm:absolute sm:flex relative">
         <div class="text">
-          <h1 class="sm:text-7xl sm:mt-1 text-green-600 uppercase font-bold anton-regular">
+          <h1 class="sm:text-7xl text sm:mt-1 text-white uppercase font-bold anton-regular">
             On a mission to plant<br /><span class="text-orange-500 bg-sky-400 rounded-xl anton-regular">1000000 +</span>
             seeds <br> Every year
           </h1>
@@ -245,7 +247,7 @@ $result = $conn->query($sql);
         <div
           class="cards sm:w-full relative sm:absolute sm:flex justify-around items-center sm:mt-48 overflow-hidden">
           <div
-            class="transform transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-500 shadow-lg rounded-lg overflow-hidden">
+            class="transform t_div transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-500 shadow-lg rounded-lg overflow-hidden">
             <img
               class="pr-4 img-fluid sm:w-full h-48 m-4 object-cover"
               src="https://img.freepik.com/free-photo/so-many-vegetables-this-field_181624-18619.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
@@ -255,12 +257,12 @@ $result = $conn->query($sql);
                 Organic product
               </h2>
               <p class="text-white">
-              So that everything is nature free
+                So that everything is nature free
               </p>
             </div>
           </div>
           <div
-            class="transform transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-100 shadow-lg rounded-lg overflow-hidden">
+            class="transform t_div transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-100 shadow-lg rounded-lg overflow-hidden">
             <img
               class="pr-4 img-fluid sm:w-full sm:h-48 m-4 object-cover"
               src="https://img.freepik.com/free-photo/smart-agriculture-iot-with-hand-planting-tree-background_53876-124626.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
@@ -270,12 +272,12 @@ $result = $conn->query($sql);
                 Everything is with scienece
               </h2>
               <p class="text-white">
-              Being able to see the smile on our indian farmer
+                Being able to see the smile on our indian farmer
               </p>
             </div>
           </div>
           <div
-            class="transform transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-black-50 shadow-lg rounded-lg overflow-hidden">
+            class="transform t_div transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-black-50 shadow-lg rounded-lg overflow-hidden">
             <img
               class="pr-4 img-fluid sm:w-full h-48 m-4 object-cover"
               src="https://img.freepik.com/free-photo/close-up-male-hands-holding-soil-little-plant_23-2148814127.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
@@ -290,7 +292,7 @@ $result = $conn->query($sql);
             </div>
           </div>
           <div
-            class="transform transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-100 shadow-lg rounded-lg overflow-hidden">
+            class="transform t_div transition duration-500 hover:scale-110 shadow:lg hover:shadow-2xl px-10 max-w-sm mx-auto p-10 bg-transparent-100 shadow-lg rounded-lg overflow-hidden">
             <img
               class="pr-4 sm:w-full h-48 m-4 object-cover"
               src="https://img.freepik.com/premium-photo/morning-sprouts-green-wheat-exploring-agriculture-ecology-gardening-practices_209190-235737.jpg?ga=GA1.1.155483166.1725039365&semt=ais_hybrid"
@@ -326,7 +328,7 @@ $result = $conn->query($sql);
             <div id="products-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
               <?php if ($result->num_rows > 0): ?>
                 <?php while ($row = $result->fetch_assoc()): ?>
-                  <div class="product-card border p-4 rounded shadow cursor-pointer">
+                  <div class="product-card border p-4 rounded shadow cursor-pointer product_card">
                     <img src="<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>" class="mb-4 sm:w-full h-54 object-cover">
                     <h2 class="product-name sm:text-xl font-semibold"><?php echo $row['name']; ?></h2>
                     <p class="text-gray-600"><?php echo $row['description']; ?></p>
@@ -347,15 +349,7 @@ $result = $conn->query($sql);
             </div>
 
 
-            <!-- Product Details Section -->
-            <!-- <div id="product-details" class="w-auto mt-10 hidden sm:flex item-center justify-center ">
-              <div class="border p-4 rounded shadow">
-                <img id="details-image" src="" alt="" class="mb-4 sm:w-full h-48 object-cover">
-                <h2 id="details-name" class="sm:text-xl font-semibold  "></h2>
-                <p id="details-description" class="text-gray-600 max-w-xs"></p>
-                <p id="details-price" class="text-lg font-bold mt-2  "></p>
-                <button class="bg-blue-500 text-white px-4 py-2 mt-4 rounded  "">Add to Cart</button>
-        </div> -->
+
           </div>
         </div>
       </div>
@@ -471,10 +465,10 @@ $result = $conn->query($sql);
             class="accordion-content sm:w-full overflow-hidden pr-4"
             aria-labelledby="basic-heading-three">
             <p class="text-base text-gray-900 font-normal leading-6">
-              In contact us section of this website you can see the calling number of the company customer care and if you want also you can email us at this email address <a href="mailto:pritamawatade.work@gmail.com?subject=The project is awesome%20 pritam&body=This%20is%20a%20Farmkart%20email.">Send Email</a>
+              In contact us section of this website you can see the calling number of the company customer care and if you want also you can email us at this email address
 
               And you can also fill up that form and hit submit we will contact you again ASAP.
-
+              <a class="text-base text-gray-900 font-normal leading-6" href="mailto:pritamawatade.work@gmail.com?subject=The project is awesome%20 pritam&body=This%20is%20a%20Farmkart%20email.">Send Email</a>
             </p>
           </div>
         </div>
@@ -518,47 +512,47 @@ $result = $conn->query($sql);
 
   <?php include './includes/footer.php' ?>
   <script>
-    function showDetails(productId) {
-      // Use AJAX or Fetch API to get the product details by productId
-      fetch('./user/get_product_details.php?id=' + productId)
-        .then(response => response.json())
-        .then(data => {
-          // Populate the details section with the fetched data
-          document.getElementById('details-image').src = data.image;
-          document.getElementById('details-name').textContent = data.name;
-          document.getElementById('details-description').textContent = data.description;
-          document.getElementById('details-price').textContent = '₹' + parseFloat(data.price).toFixed(2);
+    gsap.registerPlugin(ScrollTrigger);
 
-          // Show the details section
-          document.getElementById('product-details').classList.remove('hidden');
-        });
+    gsap.from(".product_card", {
+      y: 150,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".product_card",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+    gsap.from(".t_div", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".t_div",
+        start: "top 30%",
+        toggleActions: "play play play none"
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+  const split = new SplitType(".text");
 
-      document.addEventListener('DOMContentLoaded', function() {
-        const accordions = document.querySelectorAll('.accordion');
+  gsap.set(split.chars, {
+    transformOrigin: "center center",
+    y: 50,
+    opacity: 0
+  });
 
-        accordions.forEach(accordion => {
-          const button = accordion.querySelector('.accordion-toggle');
-          const content = accordion.querySelector('.accordion-content');
+  gsap.to(split.chars, {
+    y: 0,
+    opacity: 1,
+    stagger: 0.04,
+    duration: 1,
+    ease: "power2.out",
+    repeat: 0
+  });
+});
 
-          button.addEventListener('click', () => {
-            const isActive = accordion.classList.contains('active');
-
-            // Close all accordions
-            accordions.forEach(acc => {
-              acc.classList.remove('active');
-              acc.querySelector('.accordion-content').style.maxHeight = null;
-            });
-
-            // Toggle the clicked accordion
-            if (!isActive) {
-              accordion.classList.add('active');
-              content.style.maxHeight = content.scrollHeight + 'px';
-            }
-          });
-        });
-      });
-
-    }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

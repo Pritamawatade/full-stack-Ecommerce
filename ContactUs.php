@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 <script src="https://cdn.tailwindcss.com"></script>
 
-<section class="bg-pink-500 dark:bg-slate-800" id="contact">
+<section class="bg-green-500 dark:bg-slate-800" id="contact">
 
     <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div class="mb-4">
