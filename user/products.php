@@ -7,7 +7,7 @@ $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="bg-orange-100">
+<html lang="en" class="bg-gradient-to-r from-green-600  to-green-500">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css">
 </head>
 
-<body style="overflow-x: hidden;" >
+<body style="overflow-x: hidden;" class="min-h-screen" >
 <div class="container min-w-96 mx-auto mt-10 flex items-center justify-center">
     <!-- Search Bar -->
     <div class="mb-8 w-full max-w-md relative mt-20">
@@ -59,33 +59,34 @@ $result = $conn->query($sql);
 </div>
 
 
-        <!-- Product Details Section -->
+        <!-- Product Details Section
         <div id="product-details" class="w-auto mt-10 hidden flex item-center justify-center ">
             <div class="border p-4 rounded shadow">
                 <img id="details-image" src="" alt="" class="mb-4 w-full h-48 object-cover">
                 <h2 id="details-name" class="text-xl font-semibold  "></h2>
                 <p id="details-description" class="text-gray-600 max-w-xs"></p>
                 <p id="details-price" class="text-lg font-bold mt-2  "></p>
-                <button class="bg-blue-500 text-white px-4 py-2 mt-4 rounded  "">Add to Cart</button>
-        </div>
+                <button class="bg-blue-500 text-white px-4 py-2 mt-4 rounded ">Add to Cart</button>
+        </div> -->
     </div>
 </div>
-<script>
-function showDetails(productId) {
-    // Use AJAX or Fetch API to get the product details by productId
-    fetch('get_product_details.php?id=' + productId)
-        .then(response => response.json())
-        .then(data => {
-            // Populate the details section with the fetched data
-            document.getElementById('details-image').src = data.image;
-            document.getElementById('details-name').textContent = data.name;
-            document.getElementById('details-description').textContent = data.description;
-            document.getElementById('details-price').textContent = '₹' + parseFloat(data.price).toFixed(2);
 
-            // Show the details section
-            document.getElementById('product-details').classList.remove('hidden');
-        });
-}
+<script>
+// function showDetails(productId) {
+//     // Use AJAX or Fetch API to get the product details by productId
+//     fetch('get_product_details.php?id=' + productId)
+//         .then(response => response.json())
+//         .then(data => {
+//             // Populate the details section with the fetched data
+//             document.getElementById('details-image').src = data.image;
+//             document.getElementById('details-name').textContent = data.name;
+//             document.getElementById('details-description').textContent = data.description;
+//             document.getElementById('details-price').textContent = '₹' + parseFloat(data.price).toFixed(2);
+
+//             // Show the details section
+//             document.getElementById('product-details').classList.remove('hidden');
+//         });
+// }
 
 function searchProducts() {
     let input = document.getElementById('search-input').value.toLowerCase();

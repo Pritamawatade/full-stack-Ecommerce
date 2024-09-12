@@ -19,9 +19,9 @@ $result = $conn->query($sql);
     href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
-    <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/split-type"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -46,6 +46,9 @@ $result = $conn->query($sql);
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <style>
+    html{
+      cursor: url("https://img.icons8.com/?size=100&id=6Vl7BRSiC4CH&format=png&color=40C057"), pointer;
+    }
     body {
       all: none;
       overflow-x: hidden;
@@ -203,7 +206,7 @@ $result = $conn->query($sql);
         class="heor2text sm:flex-1 sm:flex items-center justify-center max-w-lg p-4 bg-yellow-100">
         <div>
           <h2 class="font-satisfy text-2xl">About our story</h2>
-          <h2 class="text-black-600 text-5xl font-bold font-playfair">
+          <h2 class="Abstring text-black-600 text-5xl font-bold font-playfair">
             Our company and its connection to Farming
           </h2>
           <p>
@@ -320,7 +323,7 @@ $result = $conn->query($sql);
             Often order from us
           </h2>
           <h2 class="sm:text-7xl font-bold text-black-600 font-playfair text-center">
-            Popular products
+            <span class="p1">Popular</span> <span class="p2">Products</span>
           </h2>
 
           <div class="container mx-auto mt-10">
@@ -524,35 +527,81 @@ $result = $conn->query($sql);
         toggleActions: "play none none none"
       }
     });
+
+    gsap.from(".p1", {
+      y: -150,
+      opacity: 0,
+      duration: 3,
+      scrollTrigger: {
+        trigger: ".p1",
+        start: "top 80%",
+        toggleActions: "play none play none"
+      }
+    });
+
+    gsap.from(".p2", {
+      y: 150,
+      opacity: 0,
+      duration: 3,
+      scrollTrigger: {
+        trigger: ".p2",
+        start: "top 80%",
+        toggleActions: "play none play none"
+      }
+    });
+
     gsap.from(".t_div", {
       y: 100,
       opacity: 0,
       duration: 1,
       scrollTrigger: {
         trigger: ".t_div",
-        start: "top 30%",
-        toggleActions: "play play play none"
+        start: "top 90%",
+        toggleActions: "play none none none"
       }
     });
     document.addEventListener("DOMContentLoaded", function() {
-  const split = new SplitType(".text");
+      const split = new SplitType(".text");
 
-  gsap.set(split.chars, {
-    transformOrigin: "center center",
-    y: 50,
-    opacity: 0
-  });
+      gsap.set(split.chars, {
+        transformOrigin: "center center",
+        y: 50,
+        opacity: 0
+      });
 
-  gsap.to(split.chars, {
-    y: 0,
-    opacity: 1,
-    stagger: 0.04,
-    duration: 1,
-    ease: "power2.out",
-    repeat: 0
-  });
-});
+      gsap.to(split.chars, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        duration: 1,
+        ease: "power2.out",
+        repeat: 0
+      });
+    });
 
+    document.addEventListener("DOMContentLoaded", function() {
+      const split = new SplitType(".Abstring");
+
+      gsap.set(split.chars, {
+        transformOrigin: "center center",
+        y: 50,
+        opacity: 0
+      });
+
+      gsap.to(split.chars, {
+        y: 0,
+        opacity: 1,
+        stagger: 0.01,
+        duration: 1,
+        ease: "power2.out",
+        repeat: 0,
+        scrollTrigger: {
+        trigger: ".Abstring",
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+      });
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

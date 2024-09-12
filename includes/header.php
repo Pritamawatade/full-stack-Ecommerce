@@ -98,24 +98,7 @@
         </button>
     </div>
 
-    <!-- <script>
-        document.getElementById("menuToggle").addEventListener("click", function() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("hidden");
-        });
-
-        var navbar = document.getElementById("navbar");
-
-        window.onscroll = function() {
-            if (window.pageYOffset >= 100) {
-                navbar.classList.add("bg-white");
-                navbar.classList.remove("bg-transparent");
-            } else {
-                navbar.classList.remove("bg-white");
-                navbar.classList.add("bg-transparent");
-            }
-        };
-    </script> -->
+   
 
 
 </body>

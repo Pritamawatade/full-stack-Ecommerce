@@ -19,7 +19,7 @@
 </head>
 
 <body class="">
-    <footer class="bg-gray-700 p-8">
+    <footer class="bg-gray-700 p-8 text-white" style="bottom: 0;">
         <div class="flex flex-col md:flex-row md:justify-between items-center gap-8">
             <div class="footerlinks flex flex-col md:flex-row md:flex-wrap gap-4">
                 <div class="links flex flex-col md:flex-row md:gap-4">

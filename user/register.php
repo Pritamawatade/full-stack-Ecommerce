@@ -1,5 +1,6 @@
 <?php
     include './config.php';
+    include '../includes/header.php';
     use PHPMailer\PHPMailer\PHPMailer;
 try {
     require '/xampp/htdocs/E-commerce/config/db.php';
@@ -70,11 +71,16 @@ include '../includes/header.php';
 
 ?>
 <!DOCTYPE html>
-<html lang="en" class="bg-orange-100">
+<html lang="en" class="bg-green-600">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp-FARMKART</title>
+    <style>
+        input{
+            border: 1px solid blue !important;
+        }
+    </style>
 </head>
 <body class="">
     
@@ -120,9 +126,12 @@ include '../includes/header.php';
             </button>
         </div>
         <p class="text-sm font-light text-black-500 dark:text-black-50">
-            Already have an account ?        <a href="login.php" class="font-medium text-blue-600 hover:underline dark:text-primary-500">Log in</a>
+            Already have an account ?        <a href="login.php" class="font-medium text-white underline hover:underline dark:text-primary-500">Log in</a>
         </p>
     </form>
 </div>
 </body>
 </html>
+<?php 
+include '../includes/footer.php';
+?>
