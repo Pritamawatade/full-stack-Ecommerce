@@ -46,9 +46,7 @@ $result = $conn->query($sql);
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <style>
-    html{
-      cursor: url("https://img.icons8.com/?size=100&id=6Vl7BRSiC4CH&format=png&color=40C057"), pointer;
-    }
+    
     body {
       all: none;
       overflow-x: hidden;
