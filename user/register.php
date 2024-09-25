@@ -1,6 +1,6 @@
 <?php
     include './config.php';
-    include '../includes/header.php';
+    // include '../includes/header.php';
     use PHPMailer\PHPMailer\PHPMailer;
 try {
     require '/xampp/htdocs/E-commerce/config/db.php';

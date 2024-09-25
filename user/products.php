@@ -42,7 +42,7 @@ $result = $conn->query($sql);
                 <img src="<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>" class="mb-4 w-full h-54 object-cover">
                 <h2 class="product-name text-xl font-semibold"><?php echo $row['name']; ?></h2>
                 <p class="text-gray-600"><?php echo $row['description']; ?></p>
-                <p class="text-lg font-bold mt-2">$<?php echo number_format($row['price'], 2); ?></p>
+                <p class="text-lg font-bold mt-2">₹<?php echo number_format($row['price'], 2); ?></p>
                 <form action="cart.php" method="POST">
                     <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
                     <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">

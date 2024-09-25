@@ -45,7 +45,7 @@ $order_items = $stmt->get_result();
         <h2 class="text-2xl font-semibold text-gray-700 mb-4 animate-pulse">Items</h2>
         <ul class="list-none grid grid-cols-1 gap-4">
             <?php while ($item = $order_items->fetch_assoc()): ?>
-                <li class="bg-gray-100 p-4 rounded-lg shadow-md animate-fadeIn"><?php echo $item['name']; ?> - <?php echo $item['quantity']; ?> x $<?php echo number_format($item['price'], 2); ?></li>
+                <li class="bg-gray-100 p-4 rounded-lg shadow-md animate-fadeIn"><?php echo $item['name']; ?> - <?php echo $item['quantity']; ?> x ₹<?php echo number_format($item['price'], 2); ?></li>
             <?php endwhile; ?>
         </ul>
         
